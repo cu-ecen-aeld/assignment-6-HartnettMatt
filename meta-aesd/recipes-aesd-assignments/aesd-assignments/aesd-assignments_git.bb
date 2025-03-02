@@ -20,9 +20,9 @@ FILES_${PN} += "${bindir}/aesdsocket"
 FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 TARGET_LDFLAGS += "-pthread -lrt"
 
-inherit update-rc.d pkgconfig
-INITSCRIPT_PACKAGES = "${PN}"
-INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
+#inherit update-rc.d pkgconfig
+#INITSCRIPT_PACKAGES = "${PN}"
+#INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
 
 do_configure () {
 	:
