@@ -18,7 +18,7 @@ S = "${WORKDIR}/git/server"
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
 FILES_${PN} += "${bindir}/aesdsocket"
 TARGET_LDFLAGS += "-pthread -lrt"
-DEPENDS = "libpthread librt"
+DEPENDS = "librt"
 
 
 inherit update-rc.d pkgconfig
