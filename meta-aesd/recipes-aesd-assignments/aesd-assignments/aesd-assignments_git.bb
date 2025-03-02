@@ -16,10 +16,12 @@ SRCREV = "f2929cd2bcca47b5e37e942c2acd0deab99d012b"
 S = "${WORKDIR}/git/server"
 
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
-FILES:${PN} += "${bindir}/aesdsocket"
+FILES_${PN} += "${bindir}/aesdsocket"
 TARGET_LDFLAGS += "-pthread -lrt"
+DEPENDS = "libpthread librt"
 
-inherit update-rc.d
+
+inherit update-rc.d pkgconfig
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop.sh"
 
@@ -28,7 +30,7 @@ do_configure () {
 }
 
 do_compile () {
-	oe_runmake
+	oe_runmake CFLAGS="${TARGET_CFLAGS}" LDFLAGS="${TARGET_LDFLAGS}"
 }
 
 do_install () {
