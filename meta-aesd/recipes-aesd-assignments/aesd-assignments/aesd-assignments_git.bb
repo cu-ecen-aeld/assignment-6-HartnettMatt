@@ -21,7 +21,7 @@ TARGET_LDFLAGS += "-pthread -lrt"
 
 inherit update-rc.d pkgconfig
 INITSCRIPT_PACKAGES = "${PN}"
-INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop.sh"
+INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
 
 do_configure () {
 	:
@@ -33,7 +33,7 @@ do_compile () {
 
 do_install () {
     install -d ${D}${bindir}
-    install -m 0755 aesdsocket ${D}${bindir}/aesdsocket
+	install -m 0755 ${S}/aesdsocket ${D}${bindir}/
     install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d/aesdsocket-start-stop.sh
 }
