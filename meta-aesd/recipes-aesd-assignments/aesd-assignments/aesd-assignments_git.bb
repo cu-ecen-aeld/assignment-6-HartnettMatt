@@ -17,6 +17,7 @@ S = "${WORKDIR}/git/server"
 
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
 FILES_${PN} += "${bindir}/aesdsocket"
+FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 TARGET_LDFLAGS += "-pthread -lrt"
 
 inherit update-rc.d pkgconfig
@@ -37,4 +38,3 @@ do_install () {
     install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d/aesdsocket-start-stop.sh
 }
-FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
