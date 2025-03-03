@@ -19,7 +19,7 @@ S = "${WORKDIR}/git/server"
 FILES_${PN} += "${bindir}/aesdsocket"
 FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 TARGET_LDFLAGS += "-pthread -lrt"
-RDEPENDS:${PN} += "libgcc"
+#RDEPENDS:${PN} += "libgcc"
 
 inherit update-rc.d
 INITSCRIPT_PACKAGES = "${PN}"
