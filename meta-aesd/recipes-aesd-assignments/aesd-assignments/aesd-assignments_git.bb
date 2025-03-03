@@ -21,7 +21,7 @@ FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 TARGET_LDFLAGS += "-pthread -lrt"
 RDEPENDS:${PN} += "libgcc"
 
-#inherit update-rc.d pkgconfig
+inherit update-rc.d
 #INITSCRIPT_PACKAGES = "${PN}"
 #INITSCRIPT_NAME:${PN} = "aesdsocket-start-stop"
 
