@@ -7,7 +7,7 @@ SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-HartnettMat
 
 PV = "1.0+git${SRCPV}"
 # Most up to date git hash
-SRCREV = "ebcdaab2fcc9305bcec63141009530f5b8c3d396"
+SRCREV = "2427be0f63584a9ea9ec3ae0a3283b4a42b19da3"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
