@@ -7,7 +7,7 @@ SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-HartnettMat
 
 PV = "1.0+git${SRCPV}"
 # Most up to date git hash
-SRCREV = "9f8185f34232c25d963ed6573955242d617ca077"
+SRCREV = "95ee5b84fb0937a93d577e06242b96ab4a3fab05"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
@@ -19,6 +19,7 @@ S = "${WORKDIR}/git/server"
 FILES_${PN} += "${bindir}/aesdsocket"
 FILES_${PN} += "${sysconfdir}/init.d/aesdsocket-start-stop.sh"
 TARGET_LDFLAGS += "-pthread -lrt"
+RDEPENDS:${PN} += "libgcc"
 
 #inherit update-rc.d pkgconfig
 #INITSCRIPT_PACKAGES = "${PN}"
